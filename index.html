@@ -80,11 +80,13 @@
         <div class="flex items-center space-x-4">
           <button
             class="hidden md:block px-4 py-2 text-blue-600 font-medium hover:bg-blue-50 rounded-lg"
+            data-auth="login"
           >
             Đăng nhập
           </button>
           <button
             class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+            data-auth="register"
           >
             Đăng ký
           </button>
@@ -434,6 +436,46 @@
       </div>
     </section>
 
+    <!-- Dashboard Section - Initially hidden -->
+    <section class="py-16 bg-white hidden" id="dashboard">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-8">Dashboard Học Tập</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          <div class="bg-gray-50 p-6 rounded-xl text-center">
+            <div class="feature-icon bg-blue-100 text-blue-600 mb-4">
+              <i class="fas fa-book-open text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Khóa học đang học</h3>
+            <p class="text-gray-600 mb-4" id="current-course">Chưa đăng ký</p>
+          </div>
+
+          <div class="bg-gray-50 p-6 rounded-xl text-center">
+            <div class="feature-icon bg-green-100 text-green-600 mb-4">
+              <i class="fas fa-chart-pie text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Tiến độ học tập</h3>
+            <p class="text-gray-600 mb-4" id="progress">0%</p>
+          </div>
+
+          <div class="bg-gray-50 p-6 rounded-xl text-center">
+            <div class="feature-icon bg-purple-100 text-purple-600 mb-4">
+              <i class="fas fa-trophy text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Thành tích</h3>
+            <p class="text-gray-600 mb-4" id="achievements">Chưa có</p>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 p-6 rounded-xl">
+          <h3 class="text-xl font-bold mb-4">Thông tin học viên</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="user-info">
+            <p class="text-gray-600">Vui lòng đăng nhập để xem thông tin</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Footer -->
     <footer class="bg-gray-900 text-white pt-16 pb-8">
       <div class="container mx-auto px-4">
@@ -553,6 +595,124 @@
       </div>
     </footer>
 
+    <!-- Auth Modals -->
+    <div
+      class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden"
+      id="authModal"
+    >
+      <div class="flex items-center justify-center min-h-screen">
+        <div class="bg-white rounded-lg w-full max-w-md mx-4">
+          <!-- Tabs -->
+          <div class="flex border-b">
+            <button class="flex-1 py-4 font-medium" id="loginTab">
+              Đăng nhập
+            </button>
+            <button class="flex-1 py-4 font-medium" id="registerTab">
+              Đăng ký
+            </button>
+          </div>
+
+          <!-- Login Form -->
+          <div class="p-6" id="loginForm">
+            <h3 class="text-2xl font-bold mb-6">Đăng nhập</h3>
+            <form>
+              <div class="mb-4">
+                <label class="block text-gray-700 mb-2">Email</label>
+                <input
+                  type="email"
+                  class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+              <div class="mb-6">
+                <label class="block text-gray-700 mb-2">Mật khẩu</label>
+                <input
+                  type="password"
+                  class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition"
+              >
+                Đăng nhập
+              </button>
+            </form>
+            <div class="mt-4 text-center">
+              <a href="#" class="text-blue-600 hover:underline"
+                >Quên mật khẩu?</a
+              >
+            </div>
+            <div class="mt-6 border-t pt-4 text-center">
+              <p class="text-gray-600">Hoặc đăng nhập bằng</p>
+              <div class="flex justify-center space-x-4 mt-3">
+                <button class="bg-gray-100 p-2 rounded-full">
+                  <i class="fab fa-google text-red-500"></i>
+                </button>
+                <button class="bg-gray-100 p-2 rounded-full">
+                  <i class="fab fa-facebook-f text-blue-600"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Register Form -->
+          <div class="p-6 hidden" id="registerForm">
+            <h3 class="text-2xl font-bold mb-6">Đăng ký tài khoản</h3>
+            <form>
+              <div class="mb-4">
+                <label class="block text-gray-700 mb-2">Họ và tên</label>
+                <input
+                  type="text"
+                  class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+              <div class="mb-4">
+                <label class="block text-gray-700 mb-2">Email</label>
+                <input
+                  type="email"
+                  class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+              <div class="mb-4">
+                <label class="block text-gray-700 mb-2">Mật khẩu</label>
+                <input
+                  type="password"
+                  class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+              <div class="mb-6">
+                <label class="block text-gray-700 mb-2"
+                  >Nhập lại mật khẩu</label
+                >
+                <input
+                  type="password"
+                  class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition"
+                id="registerBtn"
+              >
+                Đăng ký
+              </button>
+            </form>
+            <div class="mt-6 border-t pt-4 text-center">
+              <p class="text-gray-600">
+                Bạn đã có tài khoản?
+                <a
+                  href="#"
+                  class="text-blue-600 hover:underline"
+                  id="switchToLogin"
+                  >Đăng nhập</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Floating Action Button -->
     <div class="fixed bottom-6 right-6">
       <button
@@ -563,11 +723,159 @@
     </div>
 
     <script>
-      // Simple JavaScript for mobile menu toggle (can be expanded)
+      // Data storage using localStorage
+      const DB_NAME = "hoctap24_users";
+
+      function initDatabase() {
+        if (!localStorage.getItem(DB_NAME)) {
+          localStorage.setItem(DB_NAME, JSON.stringify([]));
+        }
+      }
+
+      function saveUserData(user) {
+        initDatabase();
+        const users = JSON.parse(localStorage.getItem(DB_NAME));
+        const existingUserIndex = users.findIndex(
+          (u) => u.email === user.email
+        );
+
+        if (existingUserIndex >= 0) {
+          users[existingUserIndex] = user; // Update existing user
+        } else {
+          users.push(user); // Add new user
+        }
+
+        localStorage.setItem(DB_NAME, JSON.stringify(users));
+        updateDashboard(user);
+      }
+
+      function getUserByEmail(email) {
+        initDatabase();
+        const users = JSON.parse(localStorage.getItem(DB_NAME));
+        return users.find((u) => u.email === email);
+      }
+
+      function updateDashboard(user = null) {
+        const dashboardSection = document.getElementById("dashboard");
+        const userInfoDiv = document.getElementById("user-info");
+        const currentCourse = document.getElementById("current-course");
+        const progress = document.getElementById("progress");
+        const achievements = document.getElementById("achievements");
+
+        if (user) {
+          dashboardSection.classList.remove("hidden");
+          userInfoDiv.innerHTML = `
+                    <div>
+                        <p class="font-medium">Họ tên:</p>
+                        <p>${user.name}</p>
+                    </div>
+                    <div>
+                        <p class="font-medium">Email:</p>
+                        <p>${user.email}</p>
+                    </div>
+                    <div>
+                        <p class="font-medium">Khóa học:</p>
+                        <p>${user.course || "Chưa đăng ký"}</p>
+                    </div>
+                    <div>
+                        <p class="font-medium">Ngày đăng ký:</p>
+                        <p>${new Date(
+                          user.registeredAt
+                        ).toLocaleDateString()}</p>
+                    </div>
+                `;
+
+          currentCourse.textContent = user.course || "Chưa đăng ký";
+          progress.textContent = user.progress || "0%";
+          achievements.textContent = user.achievements || "Chưa có";
+        } else {
+          dashboardSection.classList.add("hidden");
+          userInfoDiv.innerHTML =
+            '<p class="text-gray-600">Vui lòng đăng nhập để xem thông tin</p>';
+        }
+      }
+
+      // Initialize on page load
       document.addEventListener("DOMContentLoaded", function () {
-        const mobileMenuButton = document.querySelector(".md\\:hidden");
-        // You would add click handler here to toggle mobile menu
-        // For now it's just a placeholder
+        initDatabase();
+
+        // Check if user is already logged in
+        const loggedInUserEmail = localStorage.getItem("hoctap24_loggedInUser");
+        if (loggedInUserEmail) {
+          const user = getUserByEmail(loggedInUserEmail);
+          if (user) updateDashboard(user);
+        } else {
+          updateDashboard();
+        }
+        const authModal = document.getElementById("authModal");
+        const loginTab = document.getElementById("loginTab");
+        const registerTab = document.getElementById("registerTab");
+        const loginForm = document.getElementById("loginForm");
+        const registerForm = document.getElementById("registerForm");
+        const switchToLogin = document.getElementById("switchToLogin");
+
+        // Show login modal when login button clicked
+        document.querySelectorAll('[data-auth="login"]').forEach((btn) => {
+          btn.addEventListener("click", function (e) {
+            e.preventDefault();
+            document.getElementById("authModal").classList.remove("hidden");
+            document.getElementById("loginForm").classList.remove("hidden");
+            document.getElementById("registerForm").classList.add("hidden");
+            document
+              .getElementById("loginTab")
+              .classList.add("font-bold", "text-blue-600");
+            document
+              .getElementById("registerTab")
+              .classList.remove("font-bold", "text-blue-600");
+          });
+        });
+
+        // Show register modal when register button clicked
+        document.querySelectorAll('[data-auth="register"]').forEach((btn) => {
+          btn.addEventListener("click", function (e) {
+            e.preventDefault();
+            document.getElementById("authModal").classList.remove("hidden");
+            document.getElementById("registerForm").classList.remove("hidden");
+            document.getElementById("loginForm").classList.add("hidden");
+            document
+              .getElementById("registerTab")
+              .classList.add("font-bold", "text-blue-600");
+            document
+              .getElementById("loginTab")
+              .classList.remove("font-bold", "text-blue-600");
+          });
+        });
+
+        // Tab switching
+        loginTab.addEventListener("click", function () {
+          loginForm.classList.remove("hidden");
+          registerForm.classList.add("hidden");
+          loginTab.classList.add("font-bold", "text-blue-600");
+          registerTab.classList.remove("font-bold", "text-blue-600");
+        });
+
+        registerTab.addEventListener("click", function () {
+          registerForm.classList.remove("hidden");
+          loginForm.classList.add("hidden");
+          registerTab.classList.add("font-bold", "text-blue-600");
+          loginTab.classList.remove("font-bold", "text-blue-600");
+        });
+
+        // Switch to login from register form
+        switchToLogin.addEventListener("click", function (e) {
+          e.preventDefault();
+          loginForm.classList.remove("hidden");
+          registerForm.classList.add("hidden");
+          loginTab.classList.add("font-bold", "text-blue-600");
+          registerTab.classList.remove("font-bold", "text-blue-600");
+        });
+
+        // Close modal when clicking outside
+        authModal.addEventListener("click", function (e) {
+          if (e.target === authModal) {
+            authModal.classList.add("hidden");
+          }
+        });
 
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -576,6 +884,54 @@
             document.querySelector(this.getAttribute("href")).scrollIntoView({
               behavior: "smooth",
             });
+          });
+        });
+
+        // Handle registration form submission
+        document
+          .getElementById("registerBtn")
+          .addEventListener("click", function (e) {
+            e.preventDefault();
+
+            const name = document.querySelector(
+              '#registerForm input[type="text"]'
+            ).value;
+            const email = document.querySelector(
+              '#registerForm input[type="email"]'
+            ).value;
+            const password = document.querySelector(
+              '#registerForm input[type="password"]'
+            ).value;
+
+            if (name && email && password) {
+              const user = {
+                name: name,
+                email: email,
+                registeredAt: new Date().toISOString(),
+              };
+
+              saveUserData(user);
+              alert("Đăng ký thành công!");
+              document.getElementById("authModal").classList.add("hidden");
+            } else {
+              alert("Vui lòng điền đầy đủ thông tin!");
+            }
+          });
+
+        // Handle course registration buttons
+        document.querySelectorAll(".course-card button").forEach((btn) => {
+          btn.addEventListener("click", function (e) {
+            e.preventDefault();
+            const user = getUserData();
+            if (user) {
+              const courseName =
+                this.closest(".course-card").querySelector("h3").textContent;
+              user.course = courseName;
+              saveUserData(user);
+              alert(`Đã đăng ký khóa học: ${courseName}`);
+            } else {
+              alert("Vui lòng đăng nhập trước khi đăng ký khóa học!");
+            }
           });
         });
       });
