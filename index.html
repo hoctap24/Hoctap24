@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hoctap24 - Học Toán Từ Lớp 1 Đến Lớp 12</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      .hero-gradient {
+        background: linear-gradient(135deg, #4f46e5 0%, #10b981 100%);
+      }
+      .course-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+      .floating-btn {
+        animation: float 3s ease-in-out infinite;
+      }
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+      .feature-icon {
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body class="font-sans bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <div class="flex items-center space-x-2">
+          <div class="bg-blue-600 text-white p-2 rounded-lg">
+            <i class="fas fa-square-root-alt text-2xl"></i>
+          </div>
+          <h1 class="text-2xl font-bold text-blue-600">Hoctap24</h1>
+        </div>
+
+        <nav class="hidden md:flex space-x-8">
+          <a href="#" class="text-gray-700 hover:text-blue-600 font-medium"
+            >Trang chủ</a
+          >
+          <a href="#" class="text-gray-700 hover:text-blue-600 font-medium"
+            >Khóa học</a
+          >
+          <a href="#" class="text-gray-700 hover:text-blue-600 font-medium"
+            >Luyện thi</a
+          >
+          <a href="#" class="text-gray-700 hover:text-blue-600 font-medium"
+            >Đề thi</a
+          >
+          <a href="#" class="text-gray-700 hover:text-blue-600 font-medium"
+            >Tài liệu</a
+          >
+          <a href="#" class="text-gray-700 hover:text-blue-600 font-medium"
+            >Blog</a
+          >
+        </nav>
+
+        <div class="flex items-center space-x-4">
+          <button
+            class="hidden md:block px-4 py-2 text-blue-600 font-medium hover:bg-blue-50 rounded-lg"
+          >
+            Đăng nhập
+          </button>
+          <button
+            class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+          >
+            Đăng ký
+          </button>
+          <button class="md:hidden text-gray-700">
+            <i class="fas fa-bars text-xl"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-16 md:py-24">
+      <div
+        class="container mx-auto px-4 flex flex-col md:flex-row items-center"
+      >
+        <div class="md:w-1/2 mb-10 md:mb-0">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            Học Toán Từ Lớp 1 Đến Lớp 12
+          </h1>
+          <p class="text-xl mb-8 opacity-90">
+            Nền tảng học toán trực tuyến hàng đầu Việt Nam với phương pháp giảng
+            dạy sáng tạo, dễ hiểu cho mọi trình độ.
+          </p>
+          <div
+            class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4"
+          >
+            <button
+              class="bg-white text-blue-600 px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition"
+            >
+              Bắt đầu học ngay
+            </button>
+            <button
+              class="border-2 border-white px-6 py-3 rounded-lg font-bold hover:bg-white hover:text-blue-600 transition"
+            >
+              Xem khóa học
+            </button>
+          </div>
+        </div>
+        <div class="md:w-1/2 relative">
+          <img
+            src="https://cdn.pixabay.com/photo/2017/06/20/22/14/mathematics-2428912_1280.png"
+            alt="Học Toán"
+            class="w-full max-w-lg mx-auto floating-btn"
+          />
+          <div
+            class="absolute -bottom-5 -left-5 bg-yellow-400 text-gray-800 px-4 py-2 rounded-lg shadow-lg"
+          >
+            <span class="font-bold">1.000.000+</span> học viên
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-4">
+          Tại sao chọn Hoctap24?
+        </h2>
+        <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12">
+          Chúng tôi cung cấp giải pháp học toán toàn diện từ cơ bản đến nâng cao
+          cho học sinh từ lớp 1 đến lớp 12
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-gray-50 p-6 rounded-xl text-center">
+            <div class="feature-icon bg-blue-100 text-blue-600 mb-4">
+              <i class="fas fa-chalkboard-teacher text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Giáo viên chất lượng</h3>
+            <p class="text-gray-600">
+              Đội ngũ giáo viên giàu kinh nghiệm, phương pháp giảng dạy sáng
+              tạo, dễ hiểu.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 p-6 rounded-xl text-center">
+            <div class="feature-icon bg-green-100 text-green-600 mb-4">
+              <i class="fas fa-laptop-code text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Hệ thống bài giảng</h3>
+            <p class="text-gray-600">
+              Hàng nghìn bài giảng video chất lượng cao, bài tập từ cơ bản đến
+              nâng cao.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 p-6 rounded-xl text-center">
+            <div class="feature-icon bg-purple-100 text-purple-600 mb-4">
+              <i class="fas fa-chart-line text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Theo dõi tiến độ</h3>
+            <p class="text-gray-600">
+              Hệ thống báo cáo học tập chi tiết giúp phụ huynh theo dõi tiến độ
+              của con.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-4">Khóa học nổi bật</h2>
+        <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12">
+          Chọn khóa học phù hợp với trình độ và nhu cầu của bạn
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Course 1 -->
+          <div
+            class="bg-white rounded-xl overflow-hidden shadow-md course-card transition duration-300"
+          >
+            <img
+              src="https://cdn.pixabay.com/photo/2016/11/14/03/06/board-1822204_1280.jpg"
+              alt="Toán lớp 1"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <div class="flex justify-between items-center mb-2">
+                <span
+                  class="bg-blue-100 text-blue-600 text-xs font-medium px-2 py-1 rounded"
+                  >Lớp 1</span
+                >
+                <span class="text-yellow-500">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                  <span class="text-gray-600 ml-1">4.5</span>
+                </span>
+              </div>
+              <h3 class="text-xl font-bold mb-2">Toán cơ bản lớp 1</h3>
+              <p class="text-gray-600 mb-4">
+                Khóa học giúp bé làm quen với các con số, phép tính cơ bản và tư
+                duy toán học.
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="font-bold text-blue-600">499.000đ</span>
+                <button
+                  class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+                >
+                  Đăng ký
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Course 2 -->
+          <div
+            class="bg-white rounded-xl overflow-hidden shadow-md course-card transition duration-300"
+          >
+            <img
+              src="https://cdn.pixabay.com/photo/2015/07/02/10/23/writing-828911_1280.jpg"
+              alt="Toán lớp 6"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <div class="flex justify-between items-center mb-2">
+                <span
+                  class="bg-green-100 text-green-600 text-xs font-medium px-2 py-1 rounded"
+                  >Lớp 6</span
+                >
+                <span class="text-yellow-500">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <span class="text-gray-600 ml-1">5.0</span>
+                </span>
+              </div>
+              <h3 class="text-xl font-bold mb-2">Toán nâng cao lớp 6</h3>
+              <p class="text-gray-600 mb-4">
+                Khóa học giúp học sinh nắm vững kiến thức và phát triển tư duy
+                toán học nâng cao.
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="font-bold text-blue-600">699.000đ</span>
+                <button
+                  class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+                >
+                  Đăng ký
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Course 3 -->
+          <div
+            class="bg-white rounded-xl overflow-hidden shadow-md course-card transition duration-300"
+          >
+            <img
+              src="https://cdn.pixabay.com/photo/2015/07/02/10/22/writing-828912_1280.jpg"
+              alt="Ôn thi THPT"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <div class="flex justify-between items-center mb-2">
+                <span
+                  class="bg-purple-100 text-purple-600 text-xs font-medium px-2 py-1 rounded"
+                  >Lớp 12</span
+                >
+                <span class="text-yellow-500">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <span class="text-gray-600 ml-1">5.0</span>
+                </span>
+              </div>
+              <h3 class="text-xl font-bold mb-2">Luyện thi THPT Quốc gia</h3>
+              <p class="text-gray-600 mb-4">
+                Khóa học tổng ôn toàn diện kiến thức toán lớp 12, luyện đề thi
+                THPT Quốc gia.
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="font-bold text-blue-600">899.000đ</span>
+                <button
+                  class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+                >
+                  Đăng ký
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-10">
+          <button
+            class="border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-lg font-bold hover:bg-blue-600 hover:text-white transition"
+          >
+            Xem tất cả khóa học
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-4">
+          Học viên nói gì về chúng tôi
+        </h2>
+        <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12">
+          Hàng nghìn học viên đã cải thiện điểm số và niềm yêu thích môn Toán
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Testimonial 1 -->
+          <div class="bg-gray-50 p-6 rounded-xl">
+            <div class="flex items-center mb-4">
+              <img
+                src="https://randomuser.me/api/portraits/women/32.jpg"
+                alt="Ngọc Anh"
+                class="w-12 h-12 rounded-full object-cover mr-4"
+              />
+              <div>
+                <h4 class="font-bold">Ngọc Anh</h4>
+                <p class="text-gray-600 text-sm">Học sinh lớp 5</p>
+              </div>
+            </div>
+            <p class="text-gray-700 mb-4">
+              "Em rất thích cách cô giáo giảng bài trên Hoctap24. Các bài giảng
+              rất dễ hiểu và có nhiều ví dụ minh họa sinh động."
+            </p>
+            <div class="text-yellow-400">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="bg-gray-50 p-6 rounded-xl">
+            <div class="flex items-center mb-4">
+              <img
+                src="https://randomuser.me/api/portraits/men/45.jpg"
+                alt="Minh Đức"
+                class="w-12 h-12 rounded-full object-cover mr-4"
+              />
+              <div>
+                <h4 class="font-bold">Minh Đức</h4>
+                <p class="text-gray-600 text-sm">Học sinh lớp 9</p>
+              </div>
+            </div>
+            <p class="text-gray-700 mb-4">
+              "Nhờ Hoctap24 mà điểm Toán của em đã tăng từ 6 lên 9 chỉ sau 3
+              tháng. Cảm ơn các thầy cô rất nhiều!"
+            </p>
+            <div class="text-yellow-400">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="bg-gray-50 p-6 rounded-xl">
+            <div class="flex items-center mb-4">
+              <img
+                src="https://randomuser.me/api/portraits/women/68.jpg"
+                alt="Phương Thảo"
+                class="w-12 h-12 rounded-full object-cover mr-4"
+              />
+              <div>
+                <h4 class="font-bold">Phương Thảo</h4>
+                <p class="text-gray-600 text-sm">Phụ huynh học sinh</p>
+              </div>
+            </div>
+            <p class="text-gray-700 mb-4">
+              "Con tôi đã tự giác học Toán hơn từ khi đăng ký Hoctap24. Tôi rất
+              hài lòng với chất lượng giảng dạy và sự tiến bộ của cháu."
+            </p>
+            <div class="text-yellow-400">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-blue-600 text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold mb-6">Sẵn sàng cải thiện môn Toán?</h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto">
+          Đăng ký ngay hôm nay để nhận ưu đãi lên đến 50% và nhiều quà tặng hấp
+          dẫn khác
+        </p>
+        <button
+          class="bg-white text-blue-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition text-lg"
+        >
+          Đăng ký ngay
+        </button>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+          <div>
+            <div class="flex items-center space-x-2 mb-4">
+              <div class="bg-blue-600 text-white p-2 rounded-lg">
+                <i class="fas fa-square-root-alt text-xl"></i>
+              </div>
+              <h3 class="text-xl font-bold">Hoctap24</h3>
+            </div>
+            <p class="text-gray-400 mb-4">
+              Nền tảng học toán trực tuyến hàng đầu Việt Nam dành cho học sinh
+              từ lớp 1 đến lớp 12.
+            </p>
+            <div class="flex space-x-4">
+              <a href="#" class="text-gray-400 hover:text-white"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="text-gray-400 hover:text-white"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a href="#" class="text-gray-400 hover:text-white"
+                ><i class="fab fa-tiktok"></i
+              ></a>
+              <a href="#" class="text-gray-400 hover:text-white"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-bold mb-4">Khóa học</h4>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white"
+                  >Toán lớp 1-5</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white"
+                  >Toán lớp 6-9</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white"
+                  >Toán lớp 10-12</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white"
+                  >Luyện thi vào 10</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white"
+                  >Luyện thi THPT</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-bold mb-4">Tài nguyên</h4>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white">Đề thi</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white">Tài liệu</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white">Bài giảng</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white">Blog</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white">Hỏi đáp</a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-bold mb-4">Liên hệ</h4>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <i class="fas fa-map-marker-alt mt-1 mr-2 text-gray-400"></i>
+                <span class="text-gray-400"
+                  >Số 123, Đường ABC, Quận XYZ, TP.HCM</span
+                >
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-phone-alt mr-2 text-gray-400"></i>
+                <span class="text-gray-400">0123 456 789</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-envelope mr-2 text-gray-400"></i>
+                <span class="text-gray-400">support@hoctap24.vn</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center"
+        >
+          <p class="text-gray-400 mb-4 md:mb-0">
+            © 2023 Hoctap24. Bảo lưu mọi quyền.
+          </p>
+          <div class="flex space-x-6">
+            <a href="#" class="text-gray-400 hover:text-white">Điều khoản</a>
+            <a href="#" class="text-gray-400 hover:text-white">Chính sách</a>
+            <a href="#" class="text-gray-400 hover:text-white">FAQ</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating Action Button -->
+    <div class="fixed bottom-6 right-6">
+      <button
+        class="bg-blue-600 text-white w-14 h-14 rounded-full shadow-lg hover:bg-blue-700 transition flex items-center justify-center"
+      >
+        <i class="fas fa-comment-dots text-xl"></i>
+      </button>
+    </div>
+
+    <script>
+      // Simple JavaScript for mobile menu toggle (can be expanded)
+      document.addEventListener("DOMContentLoaded", function () {
+        const mobileMenuButton = document.querySelector(".md\\:hidden");
+        // You would add click handler here to toggle mobile menu
+        // For now it's just a placeholder
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute("href")).scrollIntoView({
+              behavior: "smooth",
+            });
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
